@@ -18,24 +18,20 @@ public class Ccrack {
 
         char tmp[] = word.toCharArray();
         String result = "";
-        int tNum = i * -1;
+        int tNum = i ;
         for (char c : tmp) {
             if (Character.isLetter(c)) {
-                result = result + (char) (((c + tNum - (int) 'a') % 26) + (int) 'a');
-            } else {
+                if (Character.isUpperCase(c)) {
+                    result = result + (char) (((c + tNum - (int) 'A') % 26) + (int) 'A');
+                } else if (Character.isLowerCase(c)) {
+                    result = result + (char) (((c + tNum - (int) 'a') % 26) + (int) 'a');
+                }
+            }else {
                 result = result + c;
             }
         }
+            System.out.println("key = " + tNum + ". Phrase: " + result + ".");
 
-//        boolean test = false;
-//        for (char c : result.toCharArray()) {
-//            if(Character.isAlphabetic(c)) {
-//                test =true;
-//            }
-//        }
-//        if(test){
-            System.out.println("key = " + tNum * -1 + ". Phrase: " + result + ".");
-//        }
     }
     public static void main(String[]args){
 
