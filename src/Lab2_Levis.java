@@ -1,10 +1,8 @@
 
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.util.Scanner;
 
-public class Ccrack {
+public class Lab2_Levis {
 
     public static String word;
     public static void ask(){
